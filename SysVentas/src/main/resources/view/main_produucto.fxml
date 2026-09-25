@@ -2,23 +2,26 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
+<AnchorPane fx:id="miContenedor" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.ProductoController">
    <children>
-      <VBox layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <VBox layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
-            <AnchorPane prefWidth="200.0">
+            <AnchorPane>
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="Gestionar Productos" textFill="#4aac45">
+                  <Label layoutX="14.0" layoutY="14.0" text="CINEPLANET" textFill="#861c9c">
                      <font>
-                        <Font name="System Bold Italic" size="20.0" />
+                        <Font name="Monospaced Regular" size="44.0" />
                      </font>
+
                   </Label>
-                  <Label layoutX="295.0" layoutY="44.0" text="Filtrar Productos" />
-                  <TextField layoutX="295.0" layoutY="69.0" />
+                  <Label layoutX="295.0" layoutY="44.0" text="Filtrar Productos" textFill="#a177bc">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="txtFiltroDato" layoutX="295.0" layoutY="69.0" />
                   <Button layoutX="452.0" layoutY="69.0" mnemonicParsing="false" text="Buscar" />
                </children>
                <VBox.margin>
@@ -28,11 +31,11 @@
                   <Insets bottom="5.0" />
                </padding>
             </AnchorPane>
-            <HBox maxHeight="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0">
+            <HBox maxHeight="1.7976931348623157E308">
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane>
                      <children>
-                        <GridPane layoutY="5.0">
+                        <GridPane layoutY="1.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -53,27 +56,75 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Formulario de Registro" GridPane.columnSpan="2147483647" />
-                              <Label text="Tipo Producto" GridPane.rowIndex="1" />
-                              <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Nombre Producto" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                              <Label text="P. Unit" GridPane.rowIndex="3" />
-                              <Label text="Unidad" GridPane.rowIndex="4" />
-                              <Label text="Stock" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Label text="P. Unit Old" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                              <Label text="Stock Old" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Formulario de Registro en Cine" textFill="#1d5abf" GridPane.columnSpan="2147483647">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="cbxTipoFuncion" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Nombre de Usuario" textFill="#08bc32" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <TextField fx:id="txtNombreUsuario" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                              <Label text="P.dePelicula" textFill="#08bc32" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="Unidad" textFill="#08bc32" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="Stock" textFill="#08bc32" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtPUnitOld" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="txtStock" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="txtStockOld" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Label text="P.dePeliculaOld" textFill="#08bc32" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="Stock Old" textFill="#08bc32" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="Pelicula" textFill="#08bc32" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="Salas" textFill="#08bc32" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <Label text="ProductoCine" textFill="#08bc32" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="cbxPelicula" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+                              <ComboBox fx:id="cbxSala" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7" />
+                              <ComboBox fx:id="cbxProductoCine" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                              <Button mnemonicParsing="false" onAction="#validarFormulario" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Button fx:id="btnCancelar" mnemonicParsing="false" text="Cancelar" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <Label text="Tipo Funcion" textFill="#08bc32" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbnMsg" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnSpan="2147483647" GridPane.rowIndex="10" />
                            </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
                         </GridPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane>
+                     <children>
+                        <TableView fx:id="tableView" layoutX="5.0" layoutY="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                     </children></AnchorPane>
                </children>
             </HBox>
          </children>

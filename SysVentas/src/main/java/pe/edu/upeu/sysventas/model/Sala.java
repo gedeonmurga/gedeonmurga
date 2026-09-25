@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Marca {
-    private Long idMarca;
+public class Sala {
+    private Long idSala;
 
     private String nombre;
 }

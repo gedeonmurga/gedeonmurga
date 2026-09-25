@@ -8,8 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pe.edu.upeu.sysventas.enums.TiipoProducto;
-import pe.edu.upeu.sysventas.enums.TiipoProducto;
+import pe.edu.upeu.sysventas.enums.TipoFuncion;
 
 @Data
 @Builder
@@ -18,12 +17,13 @@ import pe.edu.upeu.sysventas.enums.TiipoProducto;
 public class Producto {
 
     private Long idProducto;
-    @NotBlank(message = "El nombre del producto es obligatorio")
+    @NotBlank(message = "El nombre del Usuario es obligatorio")
     private String nombre;
+    @NotNull(message = "EL tipo de funcion es obligatorio")
+    private TipoFuncion tiipoProducto;
 
-    private TiipoProducto tipoProducto;
-    @NotNull(message = "El precio del producto es obligatorio")
-    @Positive(message = "El precio del producto debe ser positivo")
+    @NotNull(message = "El precio de la pelicula es obligatorio")
+    @Positive(message = "El precio de la pelicula debe ser positivo")
     private Double pu;
     @NotNull(message = "El precio anterior del producto es obligatorio")
     @PositiveOrZero(message = "El precio anterior del producto debe ser positivo o cero")
@@ -37,10 +37,10 @@ public class Producto {
     @NotNull(message = "El stock anterior del producto es obligatorio")
     @PositiveOrZero(message = "El stock anterior del producto debe ser positivo")
     private Double stockold;
-    //@NotNull(message = "La categoria del producto es obligatoria")
-    private Categoria idCategoria;
-    //@NotNull(message = "La marca del producto es obligatoria")
-    private Marca idMarca;
-    //@NotNull(message = "La unidad de medida del producto es obligatoria")
-    private UnidMedida idUnidad;
+    @NotNull(message = "La pelicula de la funcion es obligatoria")
+    private Peliculas idPelicula;
+    @NotNull(message = "La sala de la funcion es obligatoria")
+    private Sala idSala;
+    @NotNull(message = "El producto de cine de la funcion es obligatoria")
+    private ProductoCine idProductoCine;
 }

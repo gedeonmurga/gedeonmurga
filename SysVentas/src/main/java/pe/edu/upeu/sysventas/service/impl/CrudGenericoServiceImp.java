@@ -16,7 +16,7 @@ public abstract class CrudGenericoServiceImp<T , ID> implements ICrudGenericoSer
 
     @Override
     public T update(ID id, T t) {
-        if (getRepo().existsById(id)) {
+        if (!getRepo().existsById(id)) {
         throw new ModelNotFoundExeption("ID no existe"+id);
         }
         return getRepo().update(t);
@@ -35,9 +35,10 @@ public abstract class CrudGenericoServiceImp<T , ID> implements ICrudGenericoSer
 
     @Override
     public void delete(ID id) {
-        if (getRepo().existsById(id)) {
+        if (!getRepo().existsById(id)) {
             throw new ModelNotFoundExeption("ID no existe"+id);
         }
+        System.out.println("id:"+id);
         getRepo().deleteById(id);
     }
 }
